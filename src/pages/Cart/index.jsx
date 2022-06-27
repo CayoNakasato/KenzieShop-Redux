@@ -8,8 +8,8 @@ export const CartPage = () => {
     <>
       <Header />
       <Container>
-        <Cart />
         <InfoCart />
+        <Cart />
       </Container>
     </>
   );

@@ -1,5 +1,3 @@
-import { ADD_PRODUCT, REMOVE_PRODUCT } from "./actionTypes";
+import { SET_CART } from "./actionTypes";
 
-export const addToCart = (product) =>({type: ADD_PRODUCT, product})
-
-export const removeFromCart = (list) =>({type: REMOVE_PRODUCT, list})
+export const setCart = (list) => ({ type: SET_CART, list });

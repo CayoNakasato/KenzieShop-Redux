@@ -1,69 +1,134 @@
 import styled from "styled-components";
 
 export const ContainerOne = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-    margin: 1vh auto;
+  border-radius: 10px;
 
-    width: 20rem;
+  gap: 10px;
 
-    background-color: antiquewhite;
+  margin: 1vh auto;
+  padding: 1rem;
 
-    h2{
-        font-size: 1rem;
+  width: 20rem;
+
+  background-color: var(--gray);
+
+  img {
+    width: 10rem;
+    border-radius: 10px;
+  }
+  h2 {
+    font-size: 1rem;
+  }
+
+  span {
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+
+  button {
+    border: none;
+    border-radius: 10px;
+
+    width: 15rem;
+    height: 1.5rem;
+
+    &:hover {
+      background-color: #17e674;
+      color: #640f99;
     }
-
-    img{
-        width: 10rem;
-    }
-`
+  }
+`;
 
 export const ContainerTwo = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 
-    margin: 1vh auto;
+  margin: 1vh auto;
 
-    width: 95vw;
+  border-radius: 10px;
 
-    gap: 5vw;
+  width: 90vw;
+  max-width: 700px;
 
-    background-color: antiquewhite;
-    
-    img{
-        width: 10rem;
-    }
+  gap: 5vw;
 
-    span{
-        width: 5rem;
-    }
+  background-color: var(--blue);
 
-    h2{
-        font-size: .7rem;
-        width: 20rem;
-    }
+  img {
+    width: 10rem;
+  }
 
-    button{
-        width: 7rem;
-    }
+  span {
+    width: 5rem;
+  }
 
-`
+  h2 {
+    font-size: 0.7rem;
+    width: 20rem;
+  }
+
+  button {
+    width: 7rem;
+  }
+`;
 
 export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  gap: 1vh;
+
+  h2 {
+    font-size: 0.5rem;
+
+    color: var(--gray);
+
+    width: 90%;
+  }
+
+  span {
+    color: white;
+    font-weight: 700;
+  }
+`;
+
+export const ItemController = styled.div`
+  display: flex;
+
+  button {
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
 
-    gap: 1rem;
+    width: 2rem;
 
-    h2{
-        font-size: .5rem;
+    border: none;
+    border-radius: 50px;
+  }
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+`;
 
-        width: 90%;
+export const ButtonAdd = styled.button`
+  &:hover {
+    background-color: lightgreen;
+    color: white;
+  }
+`;
 
-    }
-`
+export const ButtonRemove = styled.button`
+  &:hover {
+    background-color: lightcoral;
+    color: white;
+  }
+`;

@@ -1,11 +1,14 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
 
-    margin-top: 5vh;
+  height: 100vh;
 
+  padding-top: 7rem;
 
-`
+  gap: 2rem;
+
+  background-color: antiquewhite;
+`;

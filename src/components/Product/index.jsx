@@ -1,27 +1,13 @@
-import { ContainerTwo, ContainerOne, Content } from "./style";
-import { useDispatch, useSelector } from "react-redux";
+import { ContainerTwo, ContainerOne, Content, ItemController, ButtonRemove, ButtonAdd } from "./style";
+import { useDispatch } from "react-redux";
 import {
   addToCartThunk,
   removeFromCartThunk,
 } from "../../store/modules/cart/thunk";
-import { toast } from "react-toastify";
+
 
 export const Product = ({ product, itsOnCart = false }) => {
   const dispatch = useDispatch();
-
-  const list = useSelector(({ cart }) => cart);
-
-  //   const handleAddItens = (product) => {
-  //       product.count += 1;
-  //       console.log(product)
-  //   };
-
-  //   const handleRemovetens = (product) => {
-  //     if(product.count !== 0 ){
-  //         product.count -= 1;
-  //         console.log(product)
-  //     }
-  //   };
 
   return (
     <>
@@ -31,16 +17,14 @@ export const Product = ({ product, itsOnCart = false }) => {
           <Content>
             <h2>{product.name}</h2>
             <span>R${product.price.toFixed(2)}</span>
+            <span>Quantidade: {product.count}</span>
 
-            {/* <>
-              <button onClick={() => handleAddItens(product)}>+</button>
+            <ItemController>
+              <ButtonRemove onClick={() => dispatch(removeFromCartThunk(product.id))}>-</ButtonRemove>
               <span>{product.count}</span>
-              <button onClick={() => handleRemovetens(product)}>-</button>
-            </> */}
+              <ButtonAdd onClick={() => dispatch(addToCartThunk(product))}>+</ButtonAdd>
+            </ItemController> 
 
-            <button onClick={() => dispatch(removeFromCartThunk(product.id))}>
-              Remover do carrinho
-            </button>
           </Content>
         </ContainerTwo>
       ) : (
@@ -48,29 +32,7 @@ export const Product = ({ product, itsOnCart = false }) => {
           <img src={product.url} alt={product.name} />
           <h2>{product.name}</h2>
           <span>R${product.price.toFixed(2)}</span>
-          <button
-            onClick={() => {
-              if (list.some(({ id }) => product.id === id)) {
-                toast.error("Produto já esta no carrinho!", {
-                  position: "bottom-left",
-                  autoClose: 5000,
-                  hideProgressBar: false,
-                  closeOnClick: true,
-                  pauseOnHover: true,
-                  draggable: true,
-                  progress: undefined,
-                });
-              } else {
-                dispatch(addToCartThunk(product));
-              }
-            }}
-            // onClick={() => {
-            //   if (list.some(({ id }) => id === product.id)) {
-            //     product.count += 1;
-            //   } else {
-            //     dispatch(addToCartThunk(product));
-            //   }
-            // }}
+          <button onClick={() => dispatch(addToCartThunk(product))}
           >
             Adiconar ao Carrinho
           </button>

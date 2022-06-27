@@ -1,3 +1,1 @@
-export const ADD_PRODUCT = "@cart/ADD"
-
-export const REMOVE_PRODUCT = "@cart/REMOVE"
+export const SET_CART = "@cart/CHANGE"

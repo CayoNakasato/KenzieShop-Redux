@@ -6,6 +6,8 @@ import { useSelector } from "react-redux";
 export const Header = () => {
   const { cart } = useSelector((state) => state);
 
+  const totalItens = cart.reduce((acc, elem) => acc + elem.count, 0);
+
   const history = useHistory();
 
   const handleNavigation = (path) => {
@@ -23,7 +25,7 @@ export const Header = () => {
           <FiHome />
           Home
         </button>
-        {cart.length === 0 ? (
+        {totalItens === 0 ? (
           <button onClick={() => handleNavigation("/cart")}>
             <FiShoppingCart />
             Carrinho
@@ -31,7 +33,7 @@ export const Header = () => {
         ) : (
           <button onClick={() => handleNavigation("/cart")}>
             <FiShoppingCart />
-            <span>{cart.length}</span>
+            <span> {totalItens} </span>
             Carrinho
           </button>
         )}
