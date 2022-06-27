@@ -62,6 +62,7 @@ export const ContainerTwo = styled.div`
 
   img {
     width: 10rem;
+    border-radius: 10px;
   }
 
   span {
